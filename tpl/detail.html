@@ -1,0 +1,39 @@
+<div class="detail-nav">
+    <a class="lf" href="#!/main">
+        <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
+        </svg>
+    </a>
+    <a class="rf" href="#">
+        <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#res-collection"></use>
+        </svg>
+    </a>
+</div>
+<a href="#">
+    <img ng-src="img/{{dish.img_lg}}" alt="">
+</a>
+<div class="dish-content">
+    <span class="dish-price">{{dish.price | currency:'￥'}}</span>
+    <p class="dish-name">{{dish.name}}</p>
+    <p class="dish-material">原料:  {{dish.material}}</p>
+    <div class="dish-intro">
+        <img class="lf dish-img-sm" ng-src="img/{{dish.img_sm}}" alt="">
+        <div class="rf dish-detail">
+            <p>找寻心中的美味</p>
+            <span>The Custom Flavor</span>
+            <div class="details">
+                <p>{{dish.detail[0]}}</p>
+                <p>{{dish.detail[1]}}</p>
+                <p>{{dish.detail[2]}}</p>
+                <p>{{dish.detail[3]}}</p>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+</div>
+<nav class="fixed-nav">
+    <a id="order" ng-click="ifLogin()" href=""  class="btn-order" >我要下单</a>
+</nav>
+<!--href="#!/order/{{dish.did}}"-->

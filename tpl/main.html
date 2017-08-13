@@ -1,0 +1,38 @@
+<div class="index-header">
+        <div class="index-location">LECAKE</div>
+        <form>
+            <div class="form-group has-feedback">
+                <label class="sr-only" for="search"></label>
+                <input ng-model="kw" class="form-control" type="text" id="search" placeholder="搜索蛋糕名称或原料关键字">
+            </div>
+        </form>
+        <div class="hot-word">
+            <a href="#">买一赠一</a>
+            <a href="#">人气爆款</a>
+            <a href="#">星座立减</a>
+            <a href="#">秋之蛋糕</a>
+            <a href="#">HOT</a>
+        </div>
+</div>
+<div class="container">
+    <div class="list-group" ng-repeat="dish in dishList">
+        <a class="list-group-item" href="#!/detail/{{dish.did}}" >
+            <!--<div class="media">-->
+                <div class="list-left">
+                    <img class="list-img" ng-src="img/{{dish.img_sm}}" alt="">
+                </div>
+                <div class="list-body">
+                    <h4>{{dish.name}}</h4>
+                    <p>原料：{{dish.material}}</p>
+                    <div class="line"></div>
+                    <p>价格：{{dish.price | currency:'￥'}}</p>
+                </div>
+            <!--</div>-->
+        </a>
+    </div>
+    <!--<button ng-show="hasMore" ng-click="loadMore()" class="btn">加载更多</button>-->
+    <!--<div ng-hide="hasMore" class="alert alert-danger">-->
+        <!--<p><span class="glyphicon glyphicon-alert"></span>&nbsp;&nbsp;已经没有更多数据可供加载了！</p>-->
+    <!--</div>-->
+</div>
+<div ng-include="'tpl/footer.html'"></div>
