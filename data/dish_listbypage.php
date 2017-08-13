@@ -9,7 +9,7 @@
         $start = 0;
     }
 //    访问数据库
-    $conn = mysqli_connect('127.0.0.1','root','wzn4999660!@#','lecake');
+    $conn = mysqli_connect('192.168.1.105','root','wzn4999660!@#','lecake');
     $sql = 'SET NAME utf8';
     mysqli_query($conn,$sql);
     $sql = "SELECT did,name,img_sm,material,price FROM le_dish LIMIT $start,$count";
