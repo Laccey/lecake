@@ -1,30 +1,70 @@
-<div class="container">
-    <div class="panel panel-danger">
-        <div class="panel-heading">
-            <h3 class="panel-title">我的订单</h3>
-        </div>
-        <div class="panel-body">
-           <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <td>订单号</td>
-                        <td>图片</td>
-                        <td>下单时间</td>
-                        <td>用户名</td>
-                    </tr>
-                </thead>
-               <tbody>
-                    <tr ng-repeat="order in orderList">
-                        <td>{{order.did}}</td>
-                        <td><img ng-src="img/{{order.img_sm}}" alt=""></td>
-                        <td>{{order.order_time | date:"yyyy-MM-dd HH:mm:ss"}}</td>
-                        <td>{{order.user_name}}</td>
-                    </tr>
-               </tbody>
-           </table>
+<div class="detail-nav nav">
+    <a class="lf" href="#!/main">
+        <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+        </svg>
+    </a>
+    <span>我的订单</span>
+</div>
+<div class="myorder">
+    <div ng-if="orderList" >
+        <div class="items" ng-repeat="order in orderList">
+            <div class="Container">
+                <div class="form-group">
+                    订单号：{{order.did}}
+                </div>
+                <div class="form-group">
+                    <img ng-src="img/{{order.img_sm}}" alt="">
+                </div>
+                <div class="form-group">
+                    下单时间：{{order.order_time | date:"yyyy-MM-dd HH:mm:ss"}}
+                </div>
+                <div class="form-group form-margin">
+                    收货人：{{order.user_name}}
+                </div>
+            </div>
         </div>
     </div>
-    <br><br><br><br><br>
+    <p class="noorder">--没有更多订单了--</p>
+    <div ng-if="!orderList">
+        <img src="img/p101.jpg" alt="">
+    </div>
+        <!--<div ng-if="result.msg==='success'" class="order-success">-->
+            <!--<h4>下单成功！</h4>-->
+            <!--&lt;!&ndash;<p>您的此次订单编号为：{{result.did}}</p>&ndash;&gt;-->
+            <!--<p>您可以在 <a href="#!/myorder">用户中心</a> 查看自己的订单</p>-->
+        <!--</div>-->
+        <!--<div ng-if="result.msg==='fail'" class="order-false">-->
+            <!--<h4>下单失败！</h4>-->
+            <!--<p>失败原因为：{{result.reason}}</p>-->
+        <!--</div>-->
 </div>
 
-<div ng-include="'tpl/footer.html'"></div>
+
+<nav class="fixed-nav">
+    <a href="#!/main">
+        <span class="one-fixed-nav">
+            <svg class="index">
+                <use id="index" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#index-regular.b245d60"></use>
+            </svg>
+            <p>首页</p>
+        </span>
+    </a>
+    <a class="active" id="order" href="#!/myorder">
+        <span class="one-fixed-nav">
+            <svg class="index">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#order.070ae2a"></use>
+            </svg>
+        <p>订单</p>
+        </span>
+    </a>
+    <a id="user" href="#!/user">
+        <span class="one-fixed-nav">
+            <svg class="index">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#profile-regular.c151d62"></use>
+            </svg>
+            <p>我的</p>
+        </span>
+    </a>
+</nav>
+<!--<div ng-include="'tpl/footer.html'"></div>-->

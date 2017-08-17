@@ -7,6 +7,7 @@
     @$phone = $_REQUEST['phone'];
     @$addr = $_REQUEST['addr'];
     @$did = $_REQUEST['did'];
+    @$user = $_REQUEST['user'];
     $order_time = time()*1000;
 
     if(empty($user_name) || empty($sex) || empty($phone) || empty($addr) || empty($did) ){
@@ -18,7 +19,7 @@
     $conn = mysqli_connect('127.0.0.1','root','wzn4999660!@#','lecake');
     $sql = "SET NAME utf8";
     mysqli_query($conn,$sql);
-    $sql = "INSERT INTO le_order VALUES(NULL,'$phone','$user_name','$sex','$order_time','$addr','$did')";
+    $sql = "INSERT INTO le_order VALUES(NULL,'$phone','$user_name','$sex','$order_time','$addr','$did','$user')";
     $result = mysqli_query($conn,$sql);
     $arr = [];
     if($result){

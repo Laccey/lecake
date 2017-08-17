@@ -172,6 +172,9 @@ div.index-header .hot-word a {
   margin-top: .3rem;
   padding-bottom: .36rem;
 }
+.order-form .form-margin {
+  margin-bottom: .3rem;
+}
 .order-form .form-group {
   line-height: 1.5rem;
   font-size: .36rem;
@@ -183,6 +186,9 @@ div.index-header .hot-word a {
 }
 .order-form .form-group .form-radio {
   margin-left: .5rem;
+}
+.order-form .form-group img {
+  padding-top: .3rem;
 }
 .order-form .btn-order {
   background-color: #00d762;
@@ -202,6 +208,32 @@ div.index-header .hot-word a {
 }
 .order-form .order-success p a {
   color: #d25654;
+}
+.myorder {
+  margin-top: .3rem;
+}
+.myorder .items {
+  background-color: #fff;
+}
+.myorder .items .Container {
+  padding: 0 .3rem;
+}
+.myorder .form-margin {
+  margin-bottom: .3rem;
+}
+.myorder .form-group {
+  line-height: 1.5rem;
+  font-size: .36rem;
+  border-bottom: 1px solid #eee;
+}
+.myorder .form-group img {
+  vertical-align: middle;
+  padding: .5rem 0;
+}
+.myorder .noorder {
+  font-size: .32rem;
+  text-align: center;
+  margin-bottom: .3rem;
 }
 .fixed-nav {
   width: 10rem;

@@ -1,14 +1,30 @@
 <?php
-    session_start();
-    if(isset($_POST['user'])){
-        $user = $_POST['user'];
-        $password = $_POST['pwd'];
-        if($user == 'admin' && $password == 'admin'){
-//            var_dump($user);
-//            $_SESSION['user'] = $user;
-            return true;
-        }else{
-            return false;
+//    session_start();
+    $user = $_POST['user'];
+    $password = $_POST['pwd'];
+
+    $conn = mysqli_connect('127.0.0.1','root','wzn4999660!@#','lecake');
+    $sql = 'SET NAME utf8';
+    mysqli_query($conn,$sql);
+    $sql = 'SELECT user_name,user_pwd FROM le_user';
+    $result = mysqli_query($conn,$sql);
+    while($arr = mysqli_fetch_assoc($result)){
+        $output[] = $arr;
+    };
+    foreach($output as $k => $val){
+        if($user == $val["user_name"] && $password == $val["user_pwd"]){
+            echo $user;
         }
     }
+//    $u = $output[0]["user_name"];
+//    $p = $output[0]["user_pwd"];
+//    if($user == $u && $password == $p){
+////        $_SESSION['user'] = $user;
+////        echo $_SESSION['user'];
+//        echo $u;
+//    }else{
+//        echo "登录失败";
+//        exit();
+//    }
+
 ?>
