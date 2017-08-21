@@ -9,8 +9,8 @@
     }
 
 //    访问数据库
-    $conn = mysqli_connect('127.0.0.1','root','wzn4999660!@#','lecake');
-    $sql = "SET NAME utf8";
+    $conn = mysqli_connect('23.106.158.44','root','chouchoushigesichouchou','lecake');
+    $sql = "SET NAMES UTF8";
     mysqli_query($conn,$sql);
     $sql = "SELECT le_dish.did,le_dish.img_sm,le_order.user_name,le_order.order_time FROM le_dish,le_order WHERE le_order.user='$user' AND le_dish.did=le_order.did";
     $result = mysqli_query($conn,$sql);

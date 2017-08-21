@@ -16,8 +16,8 @@
     }
 
 //    访问数据库
-    $conn = mysqli_connect('127.0.0.1','root','wzn4999660!@#','lecake');
-    $sql = "SET NAME utf8";
+    $conn = mysqli_connect('23.106.158.44','root','chouchoushigesichouchou','lecake');
+    $sql = "SET NAMES utf8";
     mysqli_query($conn,$sql);
     $sql = "INSERT INTO le_order VALUES(NULL,'$phone','$user_name','$sex','$order_time','$addr','$did','$user')";
     $result = mysqli_query($conn,$sql);
