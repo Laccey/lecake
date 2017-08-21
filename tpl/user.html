@@ -1,4 +1,74 @@
-
+<div class="user_header">
+    <div class="detail-nav nav">
+        <a class="lf" href="#!/main">
+            <svg class="icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+            </svg>
+        </a>
+        <span>我的</span>
+    </div>
+    <div class="myzone_content" ng-repeat="user in userList">
+        <img ng-src="img/avatar/{{user.avatar}}" alt="">
+        <div class="myzone_info">
+            <h2>{{user.user_name}}</h2>
+            <p>{{user.user_phone}}</p>
+        </div>
+    </div>
+</div>
+<div class="three_lan">
+    <a href="#" class="lan balance">
+        <h2><span>0.00</span>元</h2>
+        <p>余额</p>
+    </a>
+    <a href="#" class="lan discount">
+        <h2><span>2</span>个</h2>
+        <p>优惠</p>
+    </a>
+    <a href="#" class="lan integral">
+        <h2><span>3453</span>分</h2>
+        <p>积分</p>
+    </a>
+</div>
+<div class="some_bar first_bar">
+    <span>收货地址</span>
+    <a class="rf" href="#!/main">
+        <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+        </svg>
+    </a>
+</div>
+<div class="some_bar">
+    <span>我的订单</span>
+    <a class="rf" href="#!/main">
+        <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+        </svg>
+    </a>
+</div>
+<div class="some_bar first_bar">
+    <span>服务中心</span>
+    <a class="rf" href="#!/main">
+        <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+        </svg>
+    </a>
+</div>
+<div class="some_bar">
+    <span>欢迎评分</span>
+    <a class="rf" href="#!/main">
+        <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+        </svg>
+    </a>
+</div>
+<div class="some_bar">
+    <span>下载APP</span>
+    <a class="rf" href="#!/main">
+        <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+        </svg>
+    </a>
+</div>
 
 <nav class="fixed-nav">
     <a href="#!/main">

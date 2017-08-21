@@ -235,6 +235,78 @@ div.index-header .hot-word a {
   text-align: center;
   margin-bottom: .3rem;
 }
+div.user_header {
+  background-color: #0398ff;
+}
+div.user_header .myzone_content {
+  padding: .55rem .6rem;
+  overflow: hidden;
+}
+div.user_header .myzone_content img {
+  width: 1.4rem;
+  border-radius: 50%;
+  float: left;
+}
+div.user_header .myzone_content .myzone_info {
+  float: left;
+  color: #fff;
+  padding-left: .8rem;
+}
+div.user_header .myzone_content .myzone_info h2 {
+  font-size: .6rem;
+  margin-bottom: .1rem;
+}
+div.user_header .myzone_content .myzone_info p {
+  font-size: .4rem;
+}
+.three_lan {
+  background-color: #fff;
+  width: 100%;
+}
+.three_lan .lan {
+  width: 23%;
+  display: inline-block;
+  padding: .5rem;
+  text-align: center;
+  color: #666;
+}
+.three_lan .lan h2 {
+  font-size: .3rem;
+  margin-bottom: .1rem;
+}
+.three_lan .lan h2 span {
+  font-size: .6rem;
+}
+.three_lan .lan p {
+  font-size: .3rem;
+}
+.three_lan .balance span {
+  color: #ff9900;
+}
+.three_lan .discount span {
+  color: #ff5f3e;
+}
+.three_lan .integral span {
+  color: #6ac20b;
+}
+.some_bar {
+  background-color: #fff;
+  padding: .36rem .5rem;
+  font-size: .36rem;
+  border-bottom: 1px solid #eee;
+}
+.some_bar a {
+  display: inline-block;
+}
+.some_bar a .icon {
+  width: .4rem;
+  height: .4rem;
+  background-color: #333;
+  transform: rotate(180deg);
+}
+.first_bar {
+  margin-top: .36rem;
+}
 .fixed-nav {
   width: 10rem;
   height: 1.2rem;

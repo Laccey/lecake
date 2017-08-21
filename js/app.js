@@ -127,14 +127,24 @@ angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies']).config(['$rout
     $scope.Login = function () {
        var str = jQuery.param($scope.user);
        $http.post('data/login.php', str).then(function (data) {
-                if(data.data == $scope.user.user){
-                    window.location.href = '#!/main';
-                    $cookieStore.put('user',$scope.user.user);
-                }else{
-                    alert('密码或用户名不正确!');
-                }
-            })
+            if(data.data == $scope.user.user){
+                window.location.href = '#!/main';
+                $cookieStore.put('user',$scope.user.user);
+            }else{
+                alert('密码或用户名不正确!');
+            }
+        })
    }
-}).controller('userCtrl',function ($scope,$location) {
-
+}).controller('userCtrl',function ($scope,$location,$cookieStore,$http) {
+    $scope.name = $cookieStore.get('user');
+    $http.post('data/user_infor.php','user='+$scope.name)
+        .then(function (data) {
+            var phone = data.data[0].user_phone;
+            data.data[0].user_phone = phone.substr(0,3) + '****' + phone.substr(7,11);
+            $scope.userList = data.data;
+            // $scope.user = data.data;
+            // var phone = $scope.user[0].user_phone;
+            // $scope.user.user_phone = phone.substr(0,3) + '****' + phone.substr(7,11);
+            // $scope.userList = data.data;
+        })
 });
