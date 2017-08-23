@@ -2,7 +2,7 @@
     /*根据客户端提交菜品的序号，分页返回后续的5条所对应的菜品*/
     header('Content-Type:application/json;');
     $output = [];
-    $count = 5;
+    $count = 8;
     @$start = $_REQUEST['start'];
 //    @符号用于压制该行代码产生的错误信息
     if(empty($start)){

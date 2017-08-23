@@ -22,3 +22,5 @@ a,a:hover{color:#333;}
 .lf{float:left}
 .rf{float:right}
 .cl{clear: both}
+input[type="button"],input[type="submit"],input[type="reset"],input[type="radio"]{ -webkit-appearance: none;}
+textarea{-webkit-appearance: none;}

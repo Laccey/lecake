@@ -1,5 +1,5 @@
 /**
- * Created by Wayne on 2017/6/28.
+ * Created by coco on 2017/6/28.
  */
 (function (doc,win) {
     var width = function () {
@@ -13,11 +13,8 @@
     win.onresize = function () {
         fontSize();
     };
-    var bottomBar = function () {
-
-    }
 })(document,window);
-angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies']).config(['$routeProvider',function ($routeProvider) {
+angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies','infinite-scroll']).config(['$routeProvider',function ($routeProvider) {
     $routeProvider.when('/start',{
         templateUrl:'tpl/start.html',
         controller:'startCtrl'
@@ -48,20 +45,21 @@ angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies']).config(['$rout
     }
 }).controller('startCtrl',function ($scope,$http) {
 }).controller('mainCtrl',function ($scope,$rootScope,$http,$cookieStore) {
-    $scope.hasMore = true; //是否还有更多数据可供加载
+    // $scope.hasMore = true; //是否还有更多数据可供加载
     $scope.dishList = [];
     $http.get('data/dish_listbypage.php?start=0').then(function (data) {
         $scope.dishList = $scope.dishList.concat(data.data);
     });
-    $scope.loadMore = function () {
-        $http.get('data/dish_listbypage.php?start='+$scope.dishList.length)
-            .then(function (data) {
-                if(data.data.length<5){
-                    $scope.hasMore = false;
-                }
-                $scope.dishList = $scope.dishList.concat(data.data);
-        })
-    };
+    // $scope.items = new Item();
+    // $scope.loadMore = function () {
+    //     $http.get('data/dish_listbypage.php?start='+$scope.dishList.length)
+    //         .then(function (data) {
+    //             // if(data.data.length<8){
+    //             //     $scope.hasMore = false;
+    //             // }
+    //             $scope.dishList = $scope.dishList.concat(data.data);
+    //     })
+    // };
     $scope.$watch('kw',function () {
         if($scope.kw){
             $http.get('data/dish_listbykw.php?kw='+$scope.kw)
@@ -87,7 +85,23 @@ angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies']).config(['$rout
             }
         };
     });
-}).controller('detailCtrl',function ($scope,$rootScope,$routeParams,$http,$cookieStore) {
+})
+    // .factory('Item',function ($scope,$http) {
+    // var Item = function () {
+    //     this.busy = false;
+    // };
+    // Item.prototype.loadMore = function () {
+    //     if(this.busy) return;
+    //     this.busy = true;
+    //     $http.get('data/dish_listbypage.php?start='+$scope.dishList.length)
+    //         .then(function (data) {
+    //             $scope.dishList = $scope.dishList.concat(data.data);
+    //             this.busy = false;
+    //         }.bind(this));
+    // };
+    // return Item;
+// })
+.controller('detailCtrl',function ($scope,$rootScope,$routeParams,$http,$cookieStore) {
     // 读取路由url中的参数
     $http.get('data/dish_listbydid.php?did='+$routeParams.did)
         .then(function (data) {
@@ -142,9 +156,5 @@ angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies']).config(['$rout
             var phone = data.data[0].user_phone;
             data.data[0].user_phone = phone.substr(0,3) + '****' + phone.substr(7,11);
             $scope.userList = data.data;
-            // $scope.user = data.data;
-            // var phone = $scope.user[0].user_phone;
-            // $scope.user.user_phone = phone.substr(0,3) + '****' + phone.substr(7,11);
-            // $scope.userList = data.data;
         })
 });
