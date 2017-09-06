@@ -14,11 +14,19 @@
         fontSize();
     };
 })(document,window);
+// $(document).ready(function () {
+//     setTimeout(scrollTo,0,0,0);
+// });
+window.onload = function () {
+    setTimeout(scrollTo,0,0,0);
+};
 angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies','infinite-scroll']).config(['$routeProvider',function ($routeProvider) {
-    $routeProvider.when('/start',{
-        templateUrl:'tpl/start.html',
-        controller:'startCtrl'
-    }).when('/main',{
+    $routeProvider
+    //     .when('/start',{
+    //     templateUrl:'tpl/start.html',
+    //     controller:'startCtrl'
+    // })
+    .when('/main',{
         templateUrl:'tpl/main.html',
         controller:'mainCtrl'
     }).when('/detail/:did',{
@@ -37,7 +45,7 @@ angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies','infinite-scroll
         templateUrl:'tpl/user.html',
         controller:'userCtrl'
     }).otherwise({
-        redirectTo:'/start'
+        redirectTo:'/main'
     })
 }]).controller('parentCtrl',function ($scope,$location) {
     $scope.jump = function (routeURl) {
@@ -84,6 +92,14 @@ angular.module('Module',['ng','ngRoute','ngAnimate','ngCookies','infinite-scroll
                 window.location.href = '#!/user';
             }
         };
+    });
+    $scope.swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
     });
 })
     // .factory('Item',function ($scope,$http) {
