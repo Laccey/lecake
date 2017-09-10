@@ -1,7 +1,7 @@
 <div class="detail-nav nav">
     <a class="lf" href="#!/main">
         <svg class="icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
         </svg>
     </a>
     <span>我的订单</span>
@@ -11,7 +11,7 @@
         <div class="items" ng-repeat="order in orderList">
             <div class="Container">
                 <div class="form-group">
-                    订单号：{{order.did}}
+                    <span>订单号：{{order.did}}</span>
                 </div>
                 <div class="form-group">
                     <img ng-src="img/{{order.img_sm}}" alt="">

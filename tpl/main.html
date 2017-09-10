@@ -14,35 +14,44 @@
             <a href="#">HOT</a>
         </div>
 </div>
-<div class="swiper-container">
+<div class="swiper-container padtop">
     <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="img/banner/IMG_1.png" alt="banner"></div>
         <div class="swiper-slide"><img src="img/banner/IMG_2.png" alt="banner"></div>
+        <div class="swiper-slide"><img src="img/banner/IMG_3.png" alt="banner"></div>
     </div>
     <div class="swiper-pagination"></div>
 </div>
 <div class="container" >
-    <div infinite-scroll="items.loadMore()" infinite-scroll-distance='1' infinite-scroll-disabled='items.busy'>
+    <h2 class="list-title">为你推荐<br><span>Sincerely Recommend</span></h2>
+    <!--<div infinite-scroll="items.loadMore()" infinite-scroll-distance='1' infinite-scroll-disabled='items.busy'>-->
         <div class="list-group" ng-repeat="dish in dishList">
             <a class="list-group-item" href="#!/detail/{{dish.did}}" >
-                <!--<div class="media">-->
-                <div class="list-left">
-                    <img class="list-img" ng-src="img/{{dish.img_sm}}" alt="">
-                </div>
-                <div class="list-body">
-                    <h4>{{dish.name}}</h4>
-                    <p>原料：{{dish.material}}</p>
-                    <div class="line"></div>
-                    <p>价格：{{dish.price | currency:'￥'}}</p>
-                </div>
+                <!--<div class="list-left">-->
+                    <!--<img class="list-img" ng-src="img/{{dish.img_sm}}" alt="">-->
                 <!--</div>-->
+                <!--<div class="list-body">-->
+                    <!--<h4>{{dish.name}}</h4>-->
+                    <!--<p>原料：{{dish.material}}</p>-->
+                    <!--<div class="line"></div>-->
+                    <!--<p>价格：{{dish.price | currency:'￥'}}</p>-->
+                <!--</div>-->
+                <img class="list-img" ng-src="img/{{dish.img_sm}}" alt="">
+                <h4>{{dish.name}}</h4>
+                <p>{{dish.price | currency:'￥'}}</p>
             </a>
         </div>
-    </div>
+    <!--</div>-->
 
     <!--<button ng-show="hasMore" ng-click="loadMore()" class="btn">加载更多</button>-->
     <!--<div ng-hide="hasMore" class="alert alert-danger">-->
-        <!--<p><span class="glyphicon glyphicon-alert"></span>&nbsp;&nbsp;已经没有更多数据可供加载了！</p>-->
+    <!--<p><span class="glyphicon glyphicon-alert"></span>&nbsp;&nbsp;已经没有更多数据可供加载了！</p>-->
     <!--</div>-->
 </div>
+
+    <!--&lt;!&ndash;<button ng-show="hasMore" ng-click="loadMore()" class="btn">加载更多</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div ng-hide="hasMore" class="alert alert-danger">&ndash;&gt;-->
+        <!--&lt;!&ndash;<p><span class="glyphicon glyphicon-alert"></span>&nbsp;&nbsp;已经没有更多数据可供加载了！</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--</div>-->
 <div ng-include="'tpl/footer.html'"></div>

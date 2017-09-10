@@ -1,7 +1,7 @@
 <div class="detail-nav nav">
     <a class="lf" href="#!/main">
         <svg class="icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left.6f6409e"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use>
         </svg>
     </a>
     <span>登录</span>
@@ -11,11 +11,11 @@
         <form id="loginform">
             <div class="form-group">
                 <label for="user">用户名：</label>
-                <input class="form-control" type="text" id="user" ng-model="user.user">
+                <input placeholder="admin" class="form-control" type="text" id="user" ng-model="user.user">
             </div>
             <div class="form-group">
                 <label for="pwd">密码：</label>
-                <input class="form-control" type="text" id="pwd" ng-model="user.pwd">
+                <input placeholder="admin" class="form-control" type="text" id="pwd" ng-model="user.pwd">
             </div>
             <input value="登录" class="btn-order" type="button" ng-click="Login()">
         </form>
